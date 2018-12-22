@@ -1,11 +1,13 @@
 package ru.job4j.calculator;
 
+
 /**
  * Calculate.
  *
  * @author Artem Evglevsky
  */
 public class Calculator {
+
 	private double result;
 	/**
 	 * add - суммирование двух аргументов.

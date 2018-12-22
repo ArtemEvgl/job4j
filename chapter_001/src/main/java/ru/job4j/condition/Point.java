@@ -1,5 +1,7 @@
 package ru.job4j.condition;
 
+
+
 /**
 * @author Artem Evglevsky.
 * @version $id$

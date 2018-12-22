@@ -20,7 +20,7 @@ public class PointTest {
 	*/
 	@Test
 	public void makeDistanceBetweenPoints() {
-		Point a = new Point(0,1);
+		Point a = new Point(0, 1);
 		Point b = new Point(2, 5);
 		double distance = a.distanceTo(b);
 		assertThat(distance, closeTo(4.4, 0.1));
