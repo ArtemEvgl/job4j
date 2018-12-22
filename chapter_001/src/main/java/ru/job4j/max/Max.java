@@ -20,7 +20,6 @@ public class Max {
 	* @retrun Максимальное число.
 	*/
 	public int maxNumber(int first, int second, int third) {
-		int temp = this.maxNumber(first, second);
-		return this.maxNumber(temp, third);
+		return this.maxNumber(this.maxNumber(first, second), third);
 	}
 }
