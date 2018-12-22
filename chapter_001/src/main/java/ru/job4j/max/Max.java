@@ -14,4 +14,13 @@ public class Max {
 	public int maxNumber(int first, int second) {
 		return first > second ? first : second;
 	}
+	/**
+	* Выводит максимальное число из трех.
+	* @param Три введенных числа.
+	* @retrun Максимальное число.
+	*/
+	public int maxNumber(int first, int second, int third) {
+		int temp = this.maxNumber(first, second);
+		return this.maxNumber(temp, third);
+	}
 }

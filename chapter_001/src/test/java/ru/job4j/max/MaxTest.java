@@ -15,4 +15,9 @@ public class MaxTest {
 	Max max = new Max();
 	assertThat(max.maxNumber(2, 1), is(2));
 	}
+	@Test
+	public void whenFirstLessSecondAndThird() {
+	Max max = new Max();
+	assertThat(max.maxNumber(4, 3, 3), is(4));
+	}	
 }
