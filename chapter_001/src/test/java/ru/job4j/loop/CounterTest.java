@@ -11,8 +11,8 @@ import static org.junit.Assert.assertThat;
 */
 public class CounterTest {
 		@Test
-		public void whenStart2andFinish5Result6() {
+		public void whenStart1andFinish10Result30() {
 		Counter count = new Counter();
-		assertThat(count.add(2, 5), is(6));
+		assertThat(count.add(1, 10), is(30));
 		}
 }
