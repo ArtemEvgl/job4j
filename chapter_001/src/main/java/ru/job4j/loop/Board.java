@@ -22,7 +22,7 @@ public class Board {
 				if (((i + j) % 2 == 0) | ((i + j) == 0)) {
 					screen.append("X");
 				} else {
-						screen.append(" ");
+					screen.append(" ");
 				}
 			}
 			screen.append(ln);
