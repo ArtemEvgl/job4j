@@ -13,7 +13,7 @@ public class ArrayChar {
 	}
 	
 	/**
-	* Проверяет, что слово начинается с префикса.
+	* Метод проверяет, что слово начинается с префикса.
 	* @param prefix слово.
 	* @return если слово начинается с префикса.
 	*/
@@ -21,13 +21,11 @@ public class ArrayChar {
 		boolean result = true;
 		char[] value = prefix.toCharArray();
 		for (int i = 0; i < value.length; i++) {
-				if (data[i] == value[i]) {
-					continue;
-				} else {
+				if (data[i] != value[i]) {
 					result = false;
+					break;
 				}
-				break;
-		}
+		}		
 		return result;
 	}
 }	
