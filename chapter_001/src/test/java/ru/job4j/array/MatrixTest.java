@@ -9,6 +9,7 @@ import static org.junit.Assert.assertThat;
 * @since 0.1
 */
 public class MatrixTest {
+	@Test
 	public void when2on2() {
 		Matrix matrix = new Matrix();
 		int[][] table = matrix.multiple(2);
