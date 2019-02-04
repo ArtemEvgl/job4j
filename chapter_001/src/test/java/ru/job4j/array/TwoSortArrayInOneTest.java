@@ -12,10 +12,10 @@ public class TwoSortArrayInOneTest {
 	@Test
 	public void twoSortArray() {
 		TwoSortArrayInOne sortArray = new TwoSortArrayInOne();
-		int[] first = new int[] {1, 4, 5, 8, 9};
-		int[] second = new int[] {2, 6, 8, 7};
+		int[] first = new int[] {3, 7, 8, 9, 10};
+		int[] second = new int[] {1, 3, 5, 7, 13, 14};
 		int[] result = sortArray.twoSortArrayInOne(first, second);
-		int[] expect = new int[] {1, 2, 4, 5, 6, 7, 8, 8, 9};
+		int[] expect = new int[] {1, 3, 3, 5, 7, 7, 8, 9, 10, 13, 14};
 		assertThat(result, is(expect));
 	}
 }

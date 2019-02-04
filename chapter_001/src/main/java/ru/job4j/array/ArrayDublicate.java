@@ -22,7 +22,6 @@ public class ArrayDublicate {
 				array[array.length - n - 1] = array[i];
 				array[i] = temp;
 				n++;
-
 				}
 			}
 		}
