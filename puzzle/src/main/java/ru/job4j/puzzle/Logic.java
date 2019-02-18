@@ -70,16 +70,23 @@ public class Logic {
         int[][] table = this.convert();
         boolean result = false;
         for (int i = 0; i < table.length; i++) {
+            if (result) break;
             for (int j = 0; j < table.length; j++) {
-                if ((table[i][j] == 1) || (table[j][i] == 1)) {
+                if (table[i][j] == 1) {
                     result = true;
                 } else {
                     result = false;
                     break;
                 }
             }
-            if (result) {
-               break;
+            if (result) break;
+            for (int l = 0; l < table.length; l++) {
+                if (table[l][i] == 1) {
+                    result = true;
+                } else {
+                    result = false;
+                    break;
+                }
             }
         }
         return result;
