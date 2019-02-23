@@ -8,7 +8,7 @@ package ru.job4j.condition;
 public class DummyBot {
 	/**
 	* Отвечает на вопросы.
-	* @param Вопрос от килента.
+	* @param question - вопрос от килента.
 	* @return Ответ.
 	*/
 	public String answer(String question) {

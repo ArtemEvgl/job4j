@@ -8,7 +8,8 @@ package ru.job4j.loop;
 public class Counter {
 	/**
 	* Метод вычисляет сумму четных чисел в заданном диапозоне.
-	* @param Интервал.
+	* @param start - начало интервала.
+	* @param finish - конец интервала
 	* @return Сумму четных чисел.
 	*/
 	public int add(int start, int finish) {

@@ -9,7 +9,7 @@ public class Factorial {
 	/**
 	* Метод считает факториал введеного числа.
 	*
-	* @param Введенное число.
+	* @param n - введенное число.
 	* @return Факториал введенного числа.
 	*/
 	public int calc(int n) {
