@@ -1,10 +1,10 @@
 package ru.job4j.tracker;
 
-/**
- * @version $Id$
+/*
+  @version $Id$
  * @since 0.1
  */
- 
+
 import java.util.Random;
  
  public class Tracker {
@@ -67,6 +67,7 @@ import java.util.Random;
 				result = true;
 				System.arraycopy(this.items, i + 1, this.items, i, position - i);
 				--position;
+				break;
 			}
 		}
 		return result;	
@@ -88,14 +89,16 @@ import java.util.Random;
 	* return полученный массив.
 	*/
 	public Item[] findByName(String key) {
-		Item[] items = new Item[this.position];
+		Item[] tempItems = new Item[this.position];
 		int position = 0;
 		for (int i = 0; i != this.position; i++) {
-            if (this.items[i].getName() == key) {
-                items[position++] = this.items[i];
+            if (this.items[i].getName().equals(key)) {
+                tempItems[position++] = this.items[i];
             }
         }
-	return items;
+		Item[] items = new Item[position];
+		System.arraycopy(tempItems, 0, items, 0, position);
+	    return items;
 	}
 	/**
 	* Метод проверяет в цикле все элементы массива this.items, сравнивая id с аргументом String id и возвращает найденный Item.
@@ -107,6 +110,7 @@ import java.util.Random;
 		for (int i = 0; i != position; i++) {
 			if (items[i].getId().equals(id)) {
 				findItem = items[i];
+				break;
 			}
 		}
 		return findItem;
