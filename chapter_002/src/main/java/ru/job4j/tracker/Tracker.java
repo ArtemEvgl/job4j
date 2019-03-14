@@ -5,6 +5,8 @@ package ru.job4j.tracker;
  * @since 0.1
  */
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
  
  public class Tracker {
@@ -48,6 +50,7 @@ import java.util.Random;
 		for (int i = 0; i != position; i++) {
 			if (items[i].getId().equals(id)) {
 				items[i] = newItem;
+				newItem.setId(id);
 				result = true;
 				break;
 			}
@@ -77,11 +80,7 @@ import java.util.Random;
 	* return полученный массив.
 	*/
 	public Item[] findAll() {
-		Item[] items = new Item[position];
-		for (int i = 0; i != position; i++) {
-			items[i] = this.items[i];
-		}
-		return items;
+		return Arrays.copyOf(this.items, this.position);
 	}
 	/**
 	* Метод проверяет в цикле все элементы массива this.items, сравнивая name.
@@ -96,9 +95,7 @@ import java.util.Random;
                 tempItems[position++] = this.items[i];
             }
         }
-		Item[] items = new Item[position];
-		System.arraycopy(tempItems, 0, items, 0, position);
-	    return items;
+	    return Arrays.copyOf(tempItems, position);
 	}
 	/**
 	* Метод проверяет в цикле все элементы массива this.items, сравнивая id с аргументом String id и возвращает найденный Item.
