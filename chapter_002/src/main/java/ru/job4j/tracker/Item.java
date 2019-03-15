@@ -30,7 +30,7 @@ public class Item {
 		this.name = name;
 	}
 	
-	private String getDecs() {
+	public String getDecs() {
 		return decs;
 	}
 	
@@ -38,7 +38,7 @@ public class Item {
 		this.decs = decs;
 	}
 	
-	private long getTime() {
+	public long getTime() {
 		return time;
 	}
 	
