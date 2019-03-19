@@ -47,7 +47,7 @@ package ru.job4j.tracker;
      * @param input ввод данных.
      * @param tracker хранилище заявок.
      */
-	  private StartUI(Tracker tracker, Input input) {
+	  public StartUI(Tracker tracker, Input input) {
 		  this.tracker = tracker;
 		  this.input = input;
 	  }
@@ -145,44 +145,41 @@ package ru.job4j.tracker;
 	  /**
 	  * Метод реализует поиск заявки по id.
 	  */
-	  private void findItem() {
+	    private void findItem() {
 	  	   System.out.println("------------ Поиск заявки по ID --------------");
 		   Item findItem;
 		   String id = this.input.ask("Введите id заявки которую нужно найти : ");
 		   findItem = this.tracker.findById(id);
-		   if (findItem == null) {
-		      System.out.println("Заявка не найдена");
-		   }
-		   else {
-			  System.out.println(findItem.toString());
-		   }
-	  }
+		    if (findItem == null) {
+				System.out.println("Заявка не найдена");
+		    } else {
+				System.out.println(findItem.toString());
+		    }
+	    }
 	  /**
 	  * Метод реализует поиск заявок по имени.
 	  */
-	  private void findItems() {
-	  	System.out.println("------------ Поиск заявок по имени--------------");
-	  	Item[] findItems;
-	  	String name = this.input.ask("Введите id заявки которую нужно найти : ");
-	  	findItems = this.tracker.findByName(name);
-	  	if (findItems == null) {
-	  		System.out.println("Заявки не найдены");
-	  	}
-	  	else {
-	  		this.displayItems(findItems);
-	  	}
-	  }
+	    private void findItems() {
+			System.out.println("------------ Поиск заявок по имени--------------");
+			Item[] findItems;
+			String name = this.input.ask("Введите id заявки которую нужно найти : ");
+			findItems = this.tracker.findByName(name);
+			if (findItems == null) {
+				System.out.println("Заявки не найдены");
+			} else {
+				this.displayItems(findItems);
+			}
+	    }
 	  
 	  /**
 	  * Метод реализует вывод теста в зависимост от результата.
 	  */
 	  private void checkResult(boolean result) {
-		  if (result) {
-			System.out.println("Операция выполнена успешно");
-		  }
-		  else {
-			  System.out.println("Ошибка операции");
-		  }
+		    if (result) {
+				System.out.println("Операция выполнена успешно");
+		    } else {
+				System.out.println("Ошибка операции");
+		    }
 	  }
 	  /**
 	  * Метод реализует вывод заявок на экран.

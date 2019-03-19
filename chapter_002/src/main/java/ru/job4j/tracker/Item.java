@@ -55,10 +55,10 @@ public class Item {
 			return false;
 		}
 		Item item = (Item) o;
-		return time == item.time &&
-				Objects.equals(id, item.id) &&
-				Objects.equals(name, item.name) &&
-				Objects.equals(decs, item.decs);
+		return time == item.time 
+				&& Objects.equals(id, item.id) 
+				&& Objects.equals(name, item.name) 
+				&& Objects.equals(decs, item.decs);
 	}
 	
 	@Override
