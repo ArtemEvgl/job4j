@@ -154,8 +154,7 @@ package ru.job4j.tracker;
 		      System.out.println("Заявка не найдена");
 		   }
 		   else {
-			  System.out.println("id: " + findItem.getId() + ", name:" + findItem.getName() + ", description: "
-					+ findItem.getDecs() + ", time: " + findItem.getTime());
+			  System.out.println(findItem.toString());
 		   }
 	  }
 	  /**
@@ -190,8 +189,7 @@ package ru.job4j.tracker;
 	  */
 	  private void displayItems(Item[] items) {
 		for (Item item : items) {
-			  System.out.println("id: " + item.getId() + ", name:" + item.getName() + ", description: "
-					  + item.getDecs() + ", time: " + item.getTime());
+			  System.out.println(item.toString());
 		}
 	  }
 	  
