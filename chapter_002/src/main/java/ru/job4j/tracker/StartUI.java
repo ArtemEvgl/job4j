@@ -164,7 +164,7 @@ package ru.job4j.tracker;
 			Item[] findItems;
 			String name = this.input.ask("Введите id заявки которую нужно найти : ");
 			findItems = this.tracker.findByName(name);
-			if (findItems == null) {
+			if (findItems.length == 0) {
 				System.out.println("Заявки не найдены");
 			} else {
 				this.displayItems(findItems);
