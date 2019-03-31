@@ -31,7 +31,6 @@ public class StartUITest {
 		boolean result = false;
 		if (tracker.findById(item.getId()) == null) {
 			result = true;
-			
 		}
 		assertThat(result, is(true));
 	}
