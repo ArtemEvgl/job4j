@@ -25,7 +25,7 @@ public class StartUITest {
 	@Test 
 	public void whenDeleteThenTrackerItemWithSameName() {
 		Tracker tracker = new Tracker();
-		Item item = tracker.add(new Item("test name", "decs",System.currentTimeMillis()));
+		Item item = tracker.add(new Item("test name", "decs", System.currentTimeMillis()));
 		Input input = new StubInput(new String[]{"4", item.getId(), "7"});
 		new StartUI(tracker, input).init();
 		boolean result = false;
