@@ -30,8 +30,6 @@ public class OutputInformationTest {
                                                     .append("5. Найти заявку по id")
                                                     .append(System.lineSeparator())
                                                     .append("6. Найти заявки по имени")
-                                                    .append(System.lineSeparator())
-                                                    .append("7. Выйти из программы")
                                                     .append(System.lineSeparator());
     // поле содержит дефолтный вывод в консоль.
     private final PrintStream stdout = System.out;
@@ -54,7 +52,7 @@ public class OutputInformationTest {
 
     @Test
     public void showAllRequest() {
-        Input input = new StubInput(new String[] {"2", "7"});
+        Input input = new StubInput(new String[] {"2", "y"});
         new StartUI(tracker, input).init();
         assertThat(
                 new String(out.toByteArray()),
@@ -67,7 +65,6 @@ public class OutputInformationTest {
                                 .append(System.lineSeparator())
                                 .append("id: " + item2.getId() + ", name: test name2, description: decs2, time: " + item2.getTime())
                                 .append(System.lineSeparator())
-                                .append(menu)
                                 .toString()
                 )
         );
@@ -75,7 +72,7 @@ public class OutputInformationTest {
 
     @Test
     public void showById() {
-        Input input = new StubInput(new String[] {"5", item1.getId(), "7"});
+        Input input = new StubInput(new String[] {"5", item1.getId(), "y"});
         new StartUI(tracker, input).init();
         assertThat(
                 new String(out.toByteArray()),
@@ -86,7 +83,6 @@ public class OutputInformationTest {
                                 .append(System.lineSeparator())
                                 .append("id: " + item1.getId() + ", name: test name1, description: decs1, time: " + item1.getTime())
                                 .append(System.lineSeparator())
-                                .append(menu)
                                 .toString()
                 )
         );
@@ -94,7 +90,7 @@ public class OutputInformationTest {
 
     @Test
     public void showByName() {
-        Input input = new StubInput(new String[] {"6", item1.getName(), "7"});
+        Input input = new StubInput(new String[] {"6", item1.getName(), "y"});
         new StartUI(tracker, input).init();
         assertThat(
                 new String(out.toByteArray()),
@@ -105,7 +101,6 @@ public class OutputInformationTest {
                                 .append(System.lineSeparator())
                                 .append("id: " + item1.getId() + ", name: test name1, description: decs1, time: " + item1.getTime())
                                 .append(System.lineSeparator())
-                                .append(menu)
                                 .toString()
                 )
         );

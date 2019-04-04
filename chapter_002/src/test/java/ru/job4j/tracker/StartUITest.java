@@ -8,7 +8,7 @@ public class StartUITest {
 	@Test
 	public void whenUserAddItemThenHasNewItemWithSameName() {
 		Tracker tracker = new Tracker();
-		Input input = new StubInput(new String[]{"1", "test name", "desc", "7"});
+		Input input = new StubInput(new String[]{"1", "test name", "desc", "y"});
 		new StartUI(tracker, input).init();
 		assertThat(tracker.findAll()[0].getName(), is("test name"));
 	}
@@ -17,7 +17,7 @@ public class StartUITest {
 	public void whenUpdateThenTrackerItemWithSameName() {
 		Tracker tracker = new Tracker();
 		Item item = tracker.add(new Item("test name", "decs", System.currentTimeMillis()));
-		Input input = new StubInput(new String[]{"3", item.getId(), "test replace", "заменили заявку", "7"});
+		Input input = new StubInput(new String[]{"3", item.getId(), "test replace", "заменили заявку", "y"});
 		new StartUI(tracker, input).init();
 		assertThat(tracker.findById(item.getId()).getName(), is("test replace"));
 	}
@@ -26,7 +26,7 @@ public class StartUITest {
 	public void whenDeleteThenTrackerItemWithSameName() {
 		Tracker tracker = new Tracker();
 		Item item = tracker.add(new Item("test name", "decs", System.currentTimeMillis()));
-		Input input = new StubInput(new String[]{"4", item.getId(), "7"});
+		Input input = new StubInput(new String[]{"4", item.getId(), "y"});
 		new StartUI(tracker, input).init();
 		boolean result = false;
 		if (tracker.findById(item.getId()) == null) {
