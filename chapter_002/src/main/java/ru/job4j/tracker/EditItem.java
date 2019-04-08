@@ -22,6 +22,11 @@ package ru.job4j.tracker;
 		 String desc = input.ask("Введите новое описание заявки :");
 		 Item item = new Item(name, desc, System.currentTimeMillis());
 		 result = tracker.replace(id, item);
+		 if(result) {
+			System.out.println("Заявка успешно отредактирована");
+		 } else {
+			System.out.println("Ошибка операции, проверьте id заявки");
+		 }
 	 }
 
 	 @Override

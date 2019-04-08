@@ -19,6 +19,11 @@ package ru.job4j.tracker;
 		  boolean result;
 		  String id = input.ask("Введите id заявки которую нужно удалить : ");
 		  result = tracker.delete(id);
+		  if(result) {
+			System.out.println("Заявка успешно удалена.");
+		  } else {
+			System.out.println("Ошибка операции, проверьте id заявки.");
+		  }
 	 }
 	 @Override
 	 public String info() {
