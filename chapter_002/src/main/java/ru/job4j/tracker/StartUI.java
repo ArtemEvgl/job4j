@@ -32,15 +32,23 @@ package ru.job4j.tracker;
 		  menu.fillActions();
 		  do { 
 		  menu.show();
-		  menu.select(Integer.valueOf(input.ask("")) - 1);
+		  menu.select(input.ask("Select:", getRange(menu)) - 1);
 		  } while (!"y".equals(this.input.ask("Exit?(y): ")));
+	  }
+	  
+	  public int[] getRange(MenuTracker menu) {
+		int[] range = new int[menu.getActionsLentgh()];
+		for (int i = 0; i < menu.getActionsLentgh(); i++) {
+			range[i] = i + 1;
+		}
+		return range;
 	  }
 	   /**
      * Запускт программы.
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new Tracker(), new ConsoleInput()).init();
+        new StartUI(new Tracker(), new ValidateInput()).init();
     }
 }
 	  
