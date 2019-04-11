@@ -58,6 +58,14 @@ public class MenuTracker {
 	 public void select(int key) {
 		 this.actions.get(key).execute(this.tracker, this.input);
 	 }
+	 
+	 public int[] getRange() {
+		int[] range = new int[getActionsLentgh()];
+		for (int i = 0; i < getActionsLentgh(); i++) {
+			range[i] = i + 1;
+		}
+		return range;
+	  }
 	 /**
      * Метод выводит на экран меню.
      */

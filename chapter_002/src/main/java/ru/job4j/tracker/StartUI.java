@@ -30,19 +30,14 @@ package ru.job4j.tracker;
 	  public void init() {
 		  MenuTracker menu = new MenuTracker(this.input, this.tracker);
 		  menu.fillActions();
+		  int[] range = menu.getRange();
 		  do { 
 		  menu.show();
-		  menu.select(input.ask("Select:", getRange(menu)) - 1);
+		  menu.select(input.ask("Select:", range) - 1);
 		  } while (!"y".equals(this.input.ask("Exit?(y): ")));
 	  }
 	  
-	  public int[] getRange(MenuTracker menu) {
-		int[] range = new int[menu.getActionsLentgh()];
-		for (int i = 0; i < menu.getActionsLentgh(); i++) {
-			range[i] = i + 1;
-		}
-		return range;
-	  }
+	  
 	   /**
      * Запускт программы.
      * @param args
