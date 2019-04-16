@@ -43,7 +43,9 @@ package ru.job4j.tracker;
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new Tracker(), new ValidateInput()).init();
+        new StartUI(new Tracker(), new ValidateInput(
+        		new ConsoleInput()
+		)).init();
     }
 }
 	  
