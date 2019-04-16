@@ -38,6 +38,13 @@ public class StubInput implements Input {
     @Override
     public int ask(String question, int[] range) {
         int key = Integer.valueOf(this.ask(question));
+        if (!this.checkKey(key, range)) {
+            throw new MenuOutException("out of menu range");
+        }
+        return key;
+    }
+
+    public boolean checkKey(int key, int[] range) {
         boolean exist = false;
         for (int i = 0; i < range.length; i++) {
             if (range[i] == key) {
@@ -45,11 +52,7 @@ public class StubInput implements Input {
                 break;
             }
         }
-        if (exist) {
-            return key;
-        } else {
-            throw new MenuOutException("out of menu range");
-        }
+        return exist;
     }
 
 }
