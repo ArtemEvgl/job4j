@@ -13,6 +13,7 @@ package ru.job4j.tracker;
 	 public int key() {
 		 return 3;
 	 }
+
 	 @Override
 	 public void execute(Tracker tracker, Input input) {
 		System.out.println("------------ Удаление заявки --------------");
