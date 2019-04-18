@@ -5,13 +5,10 @@ package ru.job4j.tracker;
  * @since 0.1
  */
  
- public class DeleteItem implements UserAction {
-	 private boolean result;
-	 private String info;
+ public class DeleteItem extends BaseAction {
 	 
-	 @Override
-	 public int key() {
-		 return 3;
+	 public DeleteItem (int key, String name) {
+		 super(key, name);
 	 }
 
 	 @Override
@@ -25,9 +22,5 @@ package ru.job4j.tracker;
 		  } else {
 			System.out.println("Ошибка операции, проверьте id заявки.");
 		  }
-	 }
-	 @Override
-	 public String info() {
-	 	return "4. Удалить заявку";
 	 }
  }

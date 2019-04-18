@@ -5,12 +5,12 @@ package ru.job4j.tracker;
  * @since 0.1
  */
  
- public class FindItemsByName implements UserAction {
+ public class FindItemsByName extends BaseAction {
 	 
-	 @Override
-	 public int key() {
-		 return 5;
+	 public FindItemsByName (int key, String name) {
+		 super(key, name);
 	 }
+	 
 	 @Override
 	 public void execute(Tracker tracker, Input input) {
 		 System.out.println("------------ Поиск заявок по имени--------------");
@@ -24,9 +24,5 @@ package ru.job4j.tracker;
 					System.out.println(item.toString());
 				}
 			}
-	 }
-	 @Override
-	 public String info() {
-		return "6. Найти заявки по имени";
 	 }
  }

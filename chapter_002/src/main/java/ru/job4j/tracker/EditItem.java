@@ -5,13 +5,11 @@ package ru.job4j.tracker;
  * @since 0.1
  */
  
- public class EditItem implements UserAction {
-	 private boolean result;
-	 private String info;
+ public class EditItem extends BaseAction {
+	boolean result;
 
-	 @Override
-	 public int key() {
-		 return 2;
+	 public EditItem (int key, String name) {
+		 super(key, name);
 	 }
 
 	 @Override
@@ -27,10 +25,5 @@ package ru.job4j.tracker;
 		 } else {
 			System.out.println("Ошибка операции, проверьте id заявки");
 		 }
-	 }
-
-	 @Override
-	 public String info() {
-	 	return "3. Исправить заявку";
 	 }
  }
