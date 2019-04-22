@@ -84,4 +84,40 @@ public class TrackerTest {
         Item[] items = tracker.findByName("test1");
         assertThat(items[0].getName(), is("test1"));
     }
+
+    @Test
+    public void testEnum() {
+        boolean result;
+        TrackerEnum trackerOne = TrackerEnum.INSTANCE;
+        TrackerEnum trackeTwo = TrackerEnum.INSTANCE;
+        result = trackerOne == trackeTwo;
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void testStaticEager() {
+        boolean result;
+        TrackerStaticEager trackerOne = TrackerStaticEager.getInstance();
+        TrackerStaticEager trackerTwo = TrackerStaticEager.getInstance();
+        result = trackerOne == trackerTwo;
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void testTrackerLazy() {
+        boolean result;
+        TrackerStaticLazy trackerOne = TrackerStaticLazy.getInstance();
+        TrackerStaticLazy trackerTwo = TrackerStaticLazy.getInstance();
+        result = trackerOne == trackerTwo;
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void testTrackerClassLazy() {
+        boolean result;
+        TrackerClassLazy trackerOne = TrackerClassLazy.getInstance();
+        TrackerClassLazy trackerTwo = TrackerClassLazy.getInstance();
+        result = trackerOne == trackerTwo;
+        assertThat(result, is(true));
+    }
 }
