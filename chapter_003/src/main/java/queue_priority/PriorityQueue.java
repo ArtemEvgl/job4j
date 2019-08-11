@@ -13,13 +13,13 @@ public class PriorityQueue {
      * @param task задача
      */
     public void put(Task task) {
-    int position = tasks.size();
         if(tasks.size() < 1) {
             tasks.add(0,task);
         } else {
+            int position = tasks.size();
             for(Task taskInQueue : tasks) {
             if(taskInQueue.getPriority() > task.getPriority()) {
-                position = tasks.indexOf(taskInQueue);
+                position--;
             }
             }
             tasks.add(position, task);
