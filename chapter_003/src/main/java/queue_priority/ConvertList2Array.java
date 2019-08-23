@@ -22,11 +22,6 @@ public class ConvertList2Array {
                 row++;
             }
         }
-        while(additional != 0) {
-            array[row][cell] = 0;
-            cell++;
-            additional--;
-        }
      return array;
     }
 }
