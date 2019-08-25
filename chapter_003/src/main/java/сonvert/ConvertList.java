@@ -1,4 +1,4 @@
-package Convert;
+package сonvert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class ConvertList {
      * @return полученный список со всеми элментами масивов.
      */
     public List<Integer> convert(List<int[]> list) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         for(int[] array : list) {
             for(Integer number : array) {
                 result.add(number);
