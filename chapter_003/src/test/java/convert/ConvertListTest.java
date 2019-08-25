@@ -1,7 +1,7 @@
-package telefon_directory;
+package convert;
 
 import org.junit.Test;
-import queue_priority.ConvertList;
+import сonvert.ConvertList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,4 +38,6 @@ public class ConvertListTest {
         List<Integer> expect = Arrays.asList(1, 2, 3, 7, 9);
         assertThat(result, is(expect));
     }
+
+
 }

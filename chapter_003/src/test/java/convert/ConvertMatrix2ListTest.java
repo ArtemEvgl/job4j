@@ -1,7 +1,7 @@
-package telefon_directory;
+package convert;
 
 import org.junit.Test;
-import queue_priority.ConvertMatrix2List;
+import сonvert.ConvertMatrix2List;
 
 import java.util.Arrays;
 import java.util.List;
