@@ -1,8 +1,9 @@
 package queue_priority;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ConvertList2Array {
+public class ConvertList {
     /**
      * Метод конвертирует список в двумерный массив с заданным количеством строк.
      * @param list - спиксок чисел, rows - количество строк.
@@ -22,5 +23,21 @@ public class ConvertList2Array {
             }
         }
      return array;
+    }
+
+    /**
+     * Метод проходит по всем элементам всех массивов в списке list
+     * и добавляет их в один общий лист Integer.
+     * @param list входный список массивов.
+     * @return полученный список со всеми элментами масивов.
+     */
+    public List<Integer> convert(List<int[]> list) {
+        List<Integer> result = new ArrayList<Integer>();
+        for(int[] array : list) {
+            for(Integer number : array) {
+                result.add(number);
+            }
+        }
+        return result;
     }
 }
