@@ -5,29 +5,24 @@ package ru.job4j.tracker;
  * @since 0.1
  */
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
  
  public class Tracker {
 	 /**
 	 * Массив для хранения заявок.
 	 */
-	 private final Item[] items = new Item[100];
+	 private final List<Item> items = new ArrayList();
 	 private static final Random RN = new Random();
-	 
-	 /**
-	 * Указатель ячейки для новой заявки.
-	 */
-	private int position = 0;
-	
+
 	/**
 	* Метод реализующий добавление заявки в хранилище
 	* @param item новая заявка
 	*/
 	public Item add(Item item) {
 		item.setId(this.generateId());
-		this.items[this.position++] = item;
+		items.add(item);
 		return item;
 	}
 	
@@ -47,10 +42,10 @@ import java.util.Random;
 	*/
 	public boolean replace(String id, Item newItem) {
 		boolean result = false;
-		for (int i = 0; i != position; i++) {
-			if (items[i].getId().equals(id)) {
-				items[i] = newItem;
+		for(Item item : items) {
+			if(item.getId().equals(id)) {
 				newItem.setId(id);
+				items.set(items.indexOf(item), newItem);
 				result = true;
 				break;
 			}
@@ -65,11 +60,10 @@ import java.util.Random;
 	*/
 	public boolean delete(String id) {
 		boolean result = false;
-		for (int i = 0; i != position; i++) {
-			if (this.items[i].getId().equals(id)) {
+		for(Item item : items) {
+			if(item.getId().equals(id)) {
 				result = true;
-				System.arraycopy(this.items, i + 1, this.items, i, position - i);
-				--position;
+				items.remove(item);
 				break;
 			}
 		}
@@ -79,23 +73,22 @@ import java.util.Random;
 	* Метод  возвращает копию массива this.items без null элементов.
 	* return полученный массив.
 	*/
-	public Item[] findAll() {
-		return Arrays.copyOf(this.items, this.position);
+	public List<Item> findAll() {
+		return items;
 	}
 	/**
 	* Метод проверяет в цикле все элементы массива this.items, сравнивая name.
 	* @param key значение с которым будем сравнивать.
 	* return полученный массив.
 	*/
-	public Item[] findByName(String key) {
-		Item[] tempItems = new Item[this.position];
-		int position = 0;
-		for (int i = 0; i != this.position; i++) {
-            if (this.items[i].getName().equals(key)) {
-                tempItems[position++] = this.items[i];
-            }
-        }
-	    return Arrays.copyOf(tempItems, position);
+	public List<Item> findByName(String key) {
+		List<Item> fidingItems = new ArrayList<>();
+		for(Item item : items) {
+			if(item.getName().equals(key)) {
+				fidingItems.add(item);
+			}
+		}
+	    return fidingItems;
 	}
 	/**
 	* Метод проверяет в цикле все элементы массива this.items, сравнивая id с аргументом String id и возвращает найденный Item.
@@ -104,9 +97,9 @@ import java.util.Random;
 	*/
 	public Item findById(String id) {
 		Item findItem = null;
-		for (int i = 0; i != position; i++) {
-			if (items[i].getId().equals(id)) {
-				findItem = items[i];
+		for (Item item : items) {
+			if(item.getId().equals(id)) {
+				findItem = item;
 				break;
 			}
 		}
