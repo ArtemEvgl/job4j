@@ -42,10 +42,10 @@ import java.util.Random;
 	*/
 	public boolean replace(String id, Item newItem) {
 		boolean result = false;
-		for(Item item : items) {
-			if(item.getId().equals(id)) {
+		for(int i = 0; i < items.size(); i++) {
+			if(items.get(i).getId().equals(id)) {
 				newItem.setId(id);
-				items.set(items.indexOf(item), newItem);
+				items.set(i, newItem);
 				result = true;
 				break;
 			}
@@ -60,10 +60,10 @@ import java.util.Random;
 	*/
 	public boolean delete(String id) {
 		boolean result = false;
-		for(Item item : items) {
-			if(item.getId().equals(id)) {
+		for(int i = 0; i < items.size(); i++) {
+			if(items.get(i).getId().equals(id)) {
+				items.remove(i);
 				result = true;
-				items.remove(item);
 				break;
 			}
 		}
