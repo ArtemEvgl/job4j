@@ -8,15 +8,15 @@ public class CoffeMachine {
         int change = value - price;
         int[] result = new int[quntityCoins(change)];
         int n = 0;
-        for(int i = 0; i < coins.length; i++) {
-            if(change / coins[i] != 0) {
+        for (int coin : coins) {
+            if (change / coin != 0) {
                 int p = 0;
-                for(int j = 0; j < change / coins[i]; j++) {
-                    result[n] = coins[i];
+                for (int j = 0; j < change / coin; j++) {
+                    result[n] = coin;
                     n++;
                     p++;
                 }
-                change = change - p * coins[i];
+                change = change - p * coin;
             }
         }
         return result;
@@ -24,10 +24,10 @@ public class CoffeMachine {
 
     int quntityCoins (int change) {
         int number = 0;
-        for(int i = 0; i < coins.length; i++) {
-            if (change / coins[i] != 0) {
-                 number += change / coins[i];
-                 change = change - coins[i]*(change / coins[i]);
+        for (int coin : coins) {
+            if (change / coin != 0) {
+                number += change / coin;
+                change = change - coin * (change / coin);
             }
         }
         return number;

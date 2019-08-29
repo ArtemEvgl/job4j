@@ -8,12 +8,11 @@ package ru.job4j.geometria;
  public class Square implements Shape {
 	 @Override
 	 public String draw() {
-		 StringBuilder strb = new StringBuilder();
-		 strb.append("++++");
-		 strb.append("+     +");
-		 strb.append("+     +");
-		 strb.append("++++");
-		 return strb.toString();
+		 String strb = "++++" +
+				 "+     +" +
+				 "+     +" +
+				 "++++";
+		 return strb;
 	 }
  }
 		 

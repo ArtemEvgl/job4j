@@ -20,7 +20,7 @@ public class CashMachine {
     private List<List<Integer>> exchange(int note, int maxCoin) {
         List<List<Integer>> result = new ArrayList<>();
         if (note == 0) {
-            result.add(new ArrayList<Integer>());
+            result.add(new ArrayList<>());
         } else {
             for (int i = this.values.length - 1; i >= 0; i--) {
                 int coin = values[i];
