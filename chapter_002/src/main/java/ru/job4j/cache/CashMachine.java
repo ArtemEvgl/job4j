@@ -1,4 +1,4 @@
-package ru.job4j.cache_machine;
+package ru.job4j.cache;
 
 import java.util.ArrayList;
 import java.util.Arrays;

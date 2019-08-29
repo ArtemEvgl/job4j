@@ -1,4 +1,4 @@
-package queue_priority;
+package queuepriority;
 
 import java.util.LinkedList;
 
@@ -13,12 +13,12 @@ public class PriorityQueue {
      * @param task задача
      */
     public void put(Task task) {
-        if(tasks.size() < 1) {
-            tasks.add(0,task);
+        if (tasks.size() < 1) {
+            tasks.add(0, task);
         } else {
             int position = tasks.size();
-            for(Task taskInQueue : tasks) {
-            if(taskInQueue.getPriority() > task.getPriority()) {
+            for (Task taskInQueue : tasks) {
+            if (taskInQueue.getPriority() > task.getPriority()) {
                 position--;
             }
             }

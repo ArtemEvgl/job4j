@@ -42,8 +42,8 @@ import java.util.Random;
 	*/
 	public boolean replace(String id, Item newItem) {
 		boolean result = false;
-		for(int i = 0; i < items.size(); i++) {
-			if(items.get(i).getId().equals(id)) {
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i).getId().equals(id)) {
 				newItem.setId(id);
 				items.set(i, newItem);
 				result = true;
@@ -60,8 +60,8 @@ import java.util.Random;
 	*/
 	public boolean delete(String id) {
 		boolean result = false;
-		for(int i = 0; i < items.size(); i++) {
-			if(items.get(i).getId().equals(id)) {
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i).getId().equals(id)) {
 				items.remove(i);
 				result = true;
 				break;
@@ -83,8 +83,8 @@ import java.util.Random;
 	*/
 	public List<Item> findByName(String key) {
 		List<Item> fidingItems = new ArrayList<>();
-		for(Item item : items) {
-			if(item.getName().equals(key)) {
+		for (Item item : items) {
+			if (item.getName().equals(key)) {
 				fidingItems.add(item);
 			}
 		}
@@ -98,7 +98,7 @@ import java.util.Random;
 	public Item findById(String id) {
 		Item findItem = null;
 		for (Item item : items) {
-			if(item.getId().equals(id)) {
+			if (item.getId().equals(id)) {
 				findItem = item;
 				break;
 			}

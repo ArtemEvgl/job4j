@@ -1,7 +1,7 @@
 package ru.job4j.geometria;
 
 import org.junit.Test;
-import ru.job4j.cache_machine.CashMachine;
+import ru.job4j.cache.CashMachine;
 
 import java.util.List;
 

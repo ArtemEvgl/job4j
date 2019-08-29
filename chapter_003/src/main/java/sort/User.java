@@ -1,6 +1,6 @@
 package sort;
 
-public class User implements Comparable<User>{
+public class User implements Comparable<User> {
 
     private String name;
     private Integer age;

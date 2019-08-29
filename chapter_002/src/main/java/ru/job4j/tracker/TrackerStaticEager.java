@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class TrackerStaticEager {
-    private static TrackerStaticEager INSTANCE = new TrackerStaticEager();
+    private static TrackerStaticEager instance = new TrackerStaticEager();
 
     private TrackerStaticEager() {
     }
 
     public static TrackerStaticEager getInstance() {
-        return INSTANCE;
+        return instance;
     }
 
     /**

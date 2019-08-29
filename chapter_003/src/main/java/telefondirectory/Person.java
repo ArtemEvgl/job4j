@@ -1,4 +1,4 @@
-package telefon_directory;
+package telefondirectory;
 
 public class Person {
     private String name;

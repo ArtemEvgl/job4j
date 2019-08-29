@@ -7,12 +7,12 @@ public class ListCompare implements Comparator<String> {
     public int compare(String left, String right) {
         int result = 0;
         int length = left.length() >= right.length() ? right.length() : left.length();
-        for(int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             result = Character.compare(left.charAt(i), right.charAt(i));
-            if(result != 0) {
+            if (result != 0) {
                 break;
             }
         }
-        return result !=0 ? result : Integer.compare(left.length(), right.length());
+        return result != 0 ? result : Integer.compare(left.length(), right.length());
     }
 }

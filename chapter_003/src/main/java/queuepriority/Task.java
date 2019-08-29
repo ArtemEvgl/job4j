@@ -1,4 +1,4 @@
-package queue_priority;
+package queuepriority;
 
 public class Task {
     private String decs;

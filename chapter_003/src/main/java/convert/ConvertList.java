@@ -1,4 +1,4 @@
-package сonvert;
+package convert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,14 +10,14 @@ public class ConvertList {
      * @return двумерный массив.
      */
     public int[][] toArray(List<Integer> list, int rows) {
-        int cells = (int)Math.ceil((double) list.size() / rows);
+        int cells = (int) Math.ceil((double) list.size() / rows);
         int[][] array = new int[rows][cells];
         int cell = 0;
         int row = 0;
         for (Integer number : list) {
             array[row][cell] = number;
             cell++;
-            if(cell == cells) {
+            if (cell == cells) {
                 cell = 0;
                 row++;
             }
@@ -33,8 +33,8 @@ public class ConvertList {
      */
     public List<Integer> convert(List<int[]> list) {
         List<Integer> result = new ArrayList<>();
-        for(int[] array : list) {
-            for(Integer number : array) {
+        for (int[] array : list) {
+            for (Integer number : array) {
                 result.add(number);
             }
         }

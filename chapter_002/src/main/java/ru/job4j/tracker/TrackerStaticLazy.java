@@ -10,7 +10,7 @@ public class TrackerStaticLazy {
     }
 
     public static TrackerStaticLazy getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new TrackerStaticLazy();
         }
         return instance;

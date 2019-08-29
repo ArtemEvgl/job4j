@@ -1,4 +1,4 @@
-package ru.job4j.coffe_machine;
+package ru.job4j.coffe;
 
 public class CoffeMachine {
 
@@ -22,7 +22,7 @@ public class CoffeMachine {
         return result;
     }
 
-    int quntityCoins (int change) {
+    int quntityCoins(int change) {
         int number = 0;
         for (int coin : coins) {
             if (change / coin != 0) {

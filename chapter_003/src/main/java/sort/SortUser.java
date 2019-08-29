@@ -10,7 +10,7 @@ public class SortUser {
         return sortedList;
     }
 
-    public List<User> sortNameLength (List<User> list) {
+    public List<User> sortNameLength(List<User> list) {
         Collections.sort(list, new Comparator<User>() {
             @Override
             public int compare(User o1, User o2) {

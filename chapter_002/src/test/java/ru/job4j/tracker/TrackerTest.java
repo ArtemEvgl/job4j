@@ -70,7 +70,7 @@ public class TrackerTest {
         Item item2 = new Item("test2", "testDescriptio2", created);
         tracker.add(item);
         tracker.add(item2);
-        List<Item> items= tracker.findAll();
+        List<Item> items = tracker.findAll();
         assertThat(items.size(), is(2));
     }
 
