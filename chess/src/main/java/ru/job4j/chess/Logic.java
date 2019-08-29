@@ -65,14 +65,14 @@ public class Logic {
 
     private boolean hasAnother(Cell[] path) {
         boolean result = false;
-        for(Cell cell : path) {
+        for (Cell cell : path) {
             for (Figure figure : this.figures) {
-                if(cell.equals(figure.position())) {
+                if (cell.equals(figure.position())) {
                     result = true;
                     break;
                 }
             }
-            if(result) {
+            if (result) {
                 break;
             }
         }

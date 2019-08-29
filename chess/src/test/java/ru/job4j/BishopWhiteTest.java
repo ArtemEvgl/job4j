@@ -14,7 +14,7 @@ public class BishopWhiteTest {
         BishopWhite bishop = new BishopWhite(Cell.D4);
         Cell[] expect = {Cell.E5, Cell.F6, Cell.G7, Cell.H8};
         try {
-            assertThat(bishop.way(Cell.D4, Cell.H8),is(expect));
+            assertThat(bishop.way(Cell.D4, Cell.H8), is(expect));
         } catch (ImpossibleMoveException e) {
             System.err.print(e);
         }
