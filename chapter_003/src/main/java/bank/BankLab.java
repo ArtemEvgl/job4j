@@ -31,7 +31,10 @@ public class BankLab {
      * @param account добавленный счет
      */
     public void addAccountToUser(String passport, Account account) {
-        this.map.get(getUserByPassport(passport)).add(account);
+        User user = getUserByPassport(passport);
+        if (user != null) {
+            this.map.get(user).add(account);
+        }
     }
 
     /**
@@ -40,7 +43,10 @@ public class BankLab {
      * @param account удаленный счет
      */
     public void delete(String passport, Account account) {
-        this.map.get(getUserByPassport(passport)).remove(account);
+        User user = getUserByPassport(passport);
+        if (user != null) {
+            this.map.get(user).remove(account);
+        }
     }
 
     /**
@@ -49,7 +55,8 @@ public class BankLab {
      * @return счета пользователя.
      */
     public List<Account> getUserAccounts(String passport) {
-        return this.map.get(getUserByPassport(passport));
+        User user = getUserByPassport(passport);
+        return user != null ? this.map.get(user) : null;
     }
 
     /**
@@ -63,10 +70,12 @@ public class BankLab {
      */
     public boolean transferMoney(String srcPassport, String srcRequisite, String destPassport,
                                  String destRequisite, double amount) {
-        if ((getAccountByRequisite(getUserAccounts(destPassport), destRequisite) == null) || (getAccountByRequisite(getUserAccounts(srcPassport), srcRequisite) == null) || (getAccountByRequisite(getUserAccounts(srcPassport), srcRequisite).getValue() < amount)) {
+        Account destAccount = getAccountByRequisite(getUserAccounts(destPassport), destRequisite);
+        Account srcAccount = getAccountByRequisite(getUserAccounts(srcPassport), srcRequisite);
+        if (destAccount == null || srcAccount == null || srcAccount.getValue() < amount) {
             return false;
         } else {
-            getAccountByRequisite(getUserAccounts(srcPassport), srcRequisite).transfer(getAccountByRequisite(getUserAccounts(destPassport), destRequisite), amount);
+            srcAccount.transfer(destAccount, amount);
             return true;
         }
     }
