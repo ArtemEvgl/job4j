@@ -3,13 +3,19 @@ package department;
 public class Subdivision {
 
     private String name;
+    private String[] codes;
 
     public Subdivision(String name) {
         this.name = name;
+        this.codes = name.split("\\\\");
     }
 
     public String getName() {
         return name;
+    }
+
+    public String[] getCodes() {
+        return codes;
     }
 
     @Override

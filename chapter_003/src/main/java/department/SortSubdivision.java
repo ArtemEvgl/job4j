@@ -39,8 +39,8 @@ public class SortSubdivision {
         @Override
         public int compare(Subdivision o1, Subdivision o2) {
             int result = 0;
-            String[] codes1 = o1.getName().split("\\\\");
-            String[] codes2 = o2.getName().split("\\\\");
+            String[] codes1 = o1.getCodes();
+            String[] codes2 = o2.getCodes();
             int length = codes1.length >= codes2.length ? codes2.length : codes1.length;
             for (int i = 0; i < length; i++) {
                 Integer one = Integer.parseInt(codes1[i].substring(i + 1));
@@ -63,8 +63,8 @@ public class SortSubdivision {
         @Override
         public int compare(Subdivision o1, Subdivision o2) {
             int result = 0;
-            String[] codes1 = o1.getName().split("\\\\");
-            String[] codes2 = o2.getName().split("\\\\");
+            String[] codes1 = o1.getCodes();
+            String[] codes2 = o2.getCodes();
             int length = codes1.length >= codes2.length ? codes2.length : codes1.length;
             for (int i = 0; i < length; i++) {
                 Integer one = Integer.parseInt(codes1[i].substring(i + 1));
