@@ -4,8 +4,10 @@ package ru.job4j.tracker;
   @version $Id$
  * @since 0.1
  */
- 
- public class StartUI {
+
+import java.util.function.Consumer;
+
+public class StartUI {
 	  /**
      * Получение данных от пользователя.
      */
@@ -14,21 +16,26 @@ package ru.job4j.tracker;
      * Хранилище заявок.
      */
 	  private final Tracker tracker;
-	  /**
+	 /**
+	  * Функциональный интерфейс, для реализации патерна стратегия.
+	  */
+	 private final Consumer<String> output;
+	 /**
      * Конструтор инициализирующий поля.
      * @param input ввод данных.
      * @param tracker хранилище заявок.
      */
-	  public StartUI(Tracker tracker, Input input) {
+	  public StartUI(Tracker tracker, Input input, Consumer<String> output) {
 		  this.tracker = tracker;
 		  this.input = input;
+		  this.output = output;
 	  }
 	  
 	  /**
 	  * Основной цикл программы.
 	  */
 	  public void init() {
-		  MenuTracker menu = new MenuTracker(this.input, this.tracker);
+		  MenuTracker menu = new MenuTracker(this.input, this.tracker, output);
 		  menu.fillActions();
 		  int[] range = menu.getRange();
 		  do { 
@@ -44,8 +51,8 @@ package ru.job4j.tracker;
      */
     public static void main(String[] args) {
         new StartUI(new Tracker(), new ValidateInput(
-        		new ConsoleInput()
-		)).init();
+        		new ConsoleInput()), System.out::println
+		).init();
     }
 }
 	  
