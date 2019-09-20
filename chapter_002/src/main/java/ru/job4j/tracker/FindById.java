@@ -4,23 +4,28 @@ package ru.job4j.tracker;
   @version $Id$
  * @since 0.1
  */
- 
- public class FindById extends BaseAction {
-	 
-	 public FindById(int key, String name) {
+
+import java.util.function.Consumer;
+
+public class FindById extends BaseAction {
+
+	private Consumer<String> consumer;
+
+	 public FindById(int key, String name, Consumer<String> consumer) {
 		 super(key, name);
+		 this.consumer = consumer;
 	 }
 	 
 	 @Override
 	 public void execute(Tracker tracker, Input input) {
-		 System.out.println("------------ Поиск заявки по ID --------------");
+		 consumer.accept("------------ Поиск заявки по ID --------------");
 		   Item findItem;
 		   String id = input.ask("Введите id заявки которую нужно найти : ");
 		   findItem = tracker.findById(id);
 		    if (findItem == null) {
-				System.out.println("Заявка не найдена");
+				consumer.accept("Заявка не найдена");
 		    } else {
-				System.out.println(findItem.toString());
+				consumer.accept(findItem.toString());
 		    }
 	 }
  }

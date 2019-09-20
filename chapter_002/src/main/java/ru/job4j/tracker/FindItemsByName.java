@@ -6,24 +6,28 @@ package ru.job4j.tracker;
  */
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class FindItemsByName extends BaseAction {
+
+	private Consumer<String> consumer;
 	 
-	 public FindItemsByName(int key, String name) {
+	 public FindItemsByName(int key, String name, Consumer<String> consumer) {
 		 super(key, name);
+		 this.consumer = consumer;
 	 }
 	 
 	 @Override
 	 public void execute(Tracker tracker, Input input) {
-		 System.out.println("------------ Поиск заявок по имени--------------");
+		 consumer.accept("------------ Поиск заявок по имени--------------");
 			List<Item> findItems;
 			String name = input.ask("Введите название заявки которую нужно найти : ");
 			findItems = tracker.findByName(name);
 			if (findItems.size() == 0) {
-				System.out.println("Заявки не найдены");
+				consumer.accept("Заявки не найдены");
 			} else {
 				for (Item item : findItems) {
-					System.out.println(item.toString());
+					consumer.accept(item.toString());
 				}
 			}
 	 }
