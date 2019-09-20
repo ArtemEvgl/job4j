@@ -1,5 +1,5 @@
-import Streamapi.Shool;
-import Streamapi.Student;
+import streamapi.Shool;
+import streamapi.Student;
 import org.junit.Test;
 
 import java.util.ArrayList;

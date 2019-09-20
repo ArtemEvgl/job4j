@@ -1,4 +1,4 @@
-package Streamapi;
+package streamapi;
 
 public class Student {
     private int score;
