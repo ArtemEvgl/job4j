@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Sсhool {
+public class School {
     Student student1 = new Student(25, "Petrov");
     Student student2 = new Student(30, "Dimidov");
     Student student3 = new Student(55, "Ivanov");

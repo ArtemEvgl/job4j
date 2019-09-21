@@ -1,6 +1,6 @@
 import org.junit.Test;
 import school.Student;
-import school.Sсhool;
+import school.School;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -12,7 +12,7 @@ public class ShoolTest {
 
     @Test
     public void whenSortClassA() {
-        Sсhool shool = new Sсhool();
+        School shool = new School();
         ArrayList<Student> students = shool.createStandartList();
         ArrayList<Student> expect = new ArrayList<>();
         expect.add(new Student(80, "Pavlov"));
@@ -22,7 +22,7 @@ public class ShoolTest {
 
     @Test
     public void whenSortClassB() {
-        Sсhool shool = new Sсhool();
+        School shool = new School();
         ArrayList<Student> students = shool.createStandartList();
         ArrayList<Student> expect = new ArrayList<>();
         expect.add(new Student(55, "Ivanov"));
@@ -32,7 +32,7 @@ public class ShoolTest {
 
     @Test
     public void whenSortClassC() {
-        Sсhool shool = new Sсhool();
+        School shool = new School();
         ArrayList<Student> students = shool.createStandartList();
         ArrayList<Student> expect = new ArrayList<>();
         expect.add(new Student(25, "Petrov"));
@@ -42,7 +42,7 @@ public class ShoolTest {
 
     @Test
     public void whenListInMap() {
-        Sсhool school = new Sсhool();
+        School school = new School();
         ArrayList<Student> students = school.createStandartList();
         Map<String, Student> expect = school.createStandartMap();
         assertThat(school.convertToMap(students), is(expect));

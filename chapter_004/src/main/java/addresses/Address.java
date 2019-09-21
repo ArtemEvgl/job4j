@@ -37,20 +37,19 @@ public class Address {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == this) {
+        if (obj == this) {
             return true;
         }
 
-        if(obj == null) {
+        if (obj == null) {
             return false;
         }
 
-        if(!(obj.getClass() == getClass())) {
+        if (!(obj.getClass() == getClass())) {
             return false;
         } else {
             Address address = (Address) obj;
-            return this.getApartament() == address.getApartament() && this.getCity().equals(address.getCity()) &&
-                   this.getHome() == address.getHome() && this.getStreet().equals(this.getStreet());
+            return this.getApartament() == address.getApartament() && this.getCity().equals(address.getCity()) && this.getHome() == address.getHome() && this.getStreet().equals(this.getStreet());
         }
     }
 
