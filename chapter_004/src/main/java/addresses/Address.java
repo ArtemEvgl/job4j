@@ -49,8 +49,8 @@ public class Address {
             return false;
         } else {
             Address address = (Address) obj;
-            return this.getApartament() == address.getApartament() && this.getCity() == address.getCity() &&
-                    this.getHome() == address.getHome() && this.getStreet() == this.getStreet();
+            return this.getApartament() == address.getApartament() && this.getCity().equals(address.getCity()) &&
+                   this.getHome() == address.getHome() && this.getStreet().equals(this.getStreet());
         }
     }
 
