@@ -34,4 +34,28 @@ public class Address {
     public String toString() {
         return city + " " + street + " " + home + " " + apartament;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == this) {
+            return true;
+        }
+
+        if(obj == null) {
+            return false;
+        }
+
+        if(!(obj.getClass() == getClass())) {
+            return false;
+        } else {
+            Address address = (Address) obj;
+            return this.getApartament() == address.getApartament() && this.getCity() == address.getCity() &&
+                    this.getHome() == address.getHome() && this.getStreet() == this.getStreet();
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return (this.getStreet() + this.getHome() + this.getCity() + this.getApartament()).hashCode();
+    }
 }

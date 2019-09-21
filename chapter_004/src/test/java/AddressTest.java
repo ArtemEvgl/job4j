@@ -22,4 +22,21 @@ public class AddressTest {
         Profiles profiles1 = new Profiles();
         assertThat(profiles1.collect(profiles), is(espect));
     }
+
+    @Test
+    public void whenHaveDuplicationAdresses() {
+        Address address1 = new Address("Moscow", "Lenina", 5, 25);
+        Address address2 = new Address("Moscow", "Lenina", 5, 25);
+        Address address3 = new Address("Anapa", "Lenina", 2, 33);
+        ArrayList<Address> espect = new ArrayList<>();
+        espect.add(address3);
+        espect.add(address1);
+
+        ArrayList<Profile> profiles = new ArrayList<>();
+        profiles.add(new Profile(address1));
+        profiles.add(new Profile(address2));
+        profiles.add(new Profile(address3));
+        Profiles profiles1 = new Profiles();
+        assertThat(profiles1.collect(profiles), is(espect));
+    }
 }
