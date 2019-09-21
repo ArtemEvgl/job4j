@@ -86,13 +86,14 @@ public class BankLab {
      * @return искомый пользователь.
      */
     public User getUserByPassport(String passport) {
-        User result = null;
-        for (User user : this.map.keySet()) {
-            if (user.getPasport().equals(passport)) {
-                result = user;
-            }
-        }
-        return result;
+          return this.map.keySet().stream().filter(user -> user.getPasport().equals(passport)).findAny().orElse(null);
+//        User result = null;
+//        for (User user : this.map.keySet()) {
+//            if (user.getPasport().equals(passport)) {
+//                result = user;
+//            }
+//        }
+//        return result;
     }
 
     /**
@@ -102,12 +103,13 @@ public class BankLab {
      * @return искомый счет.
      */
     public Account getAccountByRequisite(List<Account> accounts, String requisite) {
-        Account result = null;
-        for (Account account : accounts) {
-            if (account.getRequisites().equals(requisite)) {
-                result = account;
-            }
-        }
-        return result;
+          return accounts.stream().filter(account -> account.getRequisites().equals(requisite)).findAny().orElse(null);
+//        Account result = null;
+//        for (Account account : accounts) {
+//            if (account.getRequisites().equals(requisite)) {
+//                result = account;
+//            }
+//        }
+//        return result;
     }
 }
