@@ -1,9 +1,6 @@
 package school;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -21,7 +18,8 @@ public class School {
     }
 
     public Map<String, Student> convertToMap(List<Student> students) {
-        return students.stream().distinct().collect(Collectors.toMap(
+        Set<Student> result = new LinkedHashSet<>(students);
+        return result.stream().collect(Collectors.toMap(
                 student -> student.getSurname(),
                 student -> student
         ));
