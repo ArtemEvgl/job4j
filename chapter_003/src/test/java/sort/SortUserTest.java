@@ -31,11 +31,7 @@ public class SortUserTest {
         list.add(new User("Yan", 10));
         list.add(new User("Bobby", 33));
         list.add(new User("Bobby", 22));
-        List<User> expect = new ArrayList<>();
-        expect.add(new User("Bobby", 22));
-        expect.add(new User("Bobby", 33));
-        expect.add(new User("Yan", 10));
-        expect.add(new User("Yan", 15));
+        List<User> expect = List.of(new User("Bobby", 22), new User("Bobby", 33), new User("Yan", 10), new User("Yan", 15));
         assertThat(sortUser.sortByNameAndAge(list).toString(), is(expect.toString()));
     }
 }

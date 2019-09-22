@@ -18,10 +18,7 @@ public class ConvertListToTreeSet {
         list.add(new User("Tony", 18));
         list.add(new User("Bard", 35));
         Set<User> result = sortUser.sort(list);
-        List<User> expect = new ArrayList<>();
-        expect.add(new User("Tony", 18));
-        expect.add(new User("Simp", 20));
-        expect.add(new User("Bard", 35));
+        List<User> expect = List.of(new User("Tony", 18), new User("Simp", 20), new User("Bard", 35));
         assertThat(result.toString(), is(expect.toString()));
     }
 }

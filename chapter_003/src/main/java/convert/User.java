@@ -23,4 +23,27 @@ public class User {
     public String getCity() {
         return city;
     }
+
+    @Override
+    public int hashCode() {
+        return (this.id + this.city + this.name).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) {
+            return true;
+        }
+
+        if(obj == null) {
+            return false;
+        }
+
+        if(!(getClass() == obj.getClass())) {
+            return false;
+        } else {
+            User user = (User) obj;
+            return this.name.equals(user.name) && this.city.equals(user.city) && this.id.equals(user.id);
+        }
+    }
 }

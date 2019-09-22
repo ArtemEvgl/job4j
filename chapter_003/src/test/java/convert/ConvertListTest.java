@@ -34,7 +34,7 @@ public class ConvertListTest {
         test.add(new int[]{1, 2, 3});
         test.add(new int[]{7, 9});
         List<Integer> result = list.convert(test);
-        List<Integer> expect = Arrays.asList(1, 2, 3, 7, 9);
+        List<Integer> expect = List.of(1, 2, 3, 7, 9);
         assertThat(result, is(expect));
     }
 

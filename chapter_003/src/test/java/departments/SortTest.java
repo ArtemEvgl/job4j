@@ -25,33 +25,18 @@ public class SortTest {
     @Test
     public void increaseSort() {
         List<Subdivision> departments = SortTest.createDepartments();
-        List<Subdivision> expect = new ArrayList<>();
-        expect.add(new Subdivision("K1"));
-        expect.add(new Subdivision("K1\\SK1"));
-        expect.add(new Subdivision("K1\\SK1\\SSK1"));
-        expect.add(new Subdivision("K1\\SK1\\SSK2"));
-        expect.add(new Subdivision("K1\\SK2"));
-        expect.add(new Subdivision("K2"));
-        expect.add(new Subdivision("K2\\SK1"));
-        expect.add(new Subdivision("K2\\SK1\\SSK1"));
-        expect.add(new Subdivision("K2\\SK1\\SSK2"));
+        List<Subdivision> expect = List.of(new Subdivision("K1"), new Subdivision("K1\\SK1"), new Subdivision("K1\\SK1\\SSK1"),
+                new Subdivision("K1\\SK1\\SSK2"), new Subdivision("K1\\SK2"), new Subdivision("K2"), new Subdivision("K2\\SK1"),
+                new Subdivision("K2\\SK1\\SSK1"), new Subdivision("K2\\SK1\\SSK2"));
         assertThat(SortSubdivision.increaseSort(SortSubdivision.getAllSubdivision(departments)), is(expect));
     }
 
     @Test
     public void decreaseSort() {
         List<Subdivision> departments = SortTest.createDepartments();
-        List<Subdivision> expect = new ArrayList<>();
-        expect.add(new Subdivision("K2"));
-        expect.add(new Subdivision("K2\\SK1"));
-        expect.add(new Subdivision("K2\\SK1\\SSK2"));
-        expect.add(new Subdivision("K2\\SK1\\SSK1"));
-        expect.add(new Subdivision("K1"));
-        expect.add(new Subdivision("K1\\SK2"));
-        expect.add(new Subdivision("K1\\SK1"));
-        expect.add(new Subdivision("K1\\SK1\\SSK2"));
-        expect.add(new Subdivision("K1\\SK1\\SSK1"));
-        List<Subdivision> result = SortSubdivision.decreaseSort(SortSubdivision.getAllSubdivision(departments));
+        List<Subdivision> expect = List.of(new Subdivision("K2"), new Subdivision("K2\\SK1"), new Subdivision("K2\\SK1\\SSK2"),
+                new Subdivision("K2\\SK1\\SSK1"), new Subdivision("K1"), new Subdivision("K1\\SK2"), new Subdivision("K1\\SK1"),
+                new Subdivision("K1\\SK1\\SSK2"), new Subdivision("K1\\SK1\\SSK1"));
         assertThat(SortSubdivision.decreaseSort(SortSubdivision.getAllSubdivision(departments)), is(expect));
     }
 
