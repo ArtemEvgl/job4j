@@ -1,11 +1,9 @@
 package school;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class School {
     Student student1 = new Student(25, "Petrov");
@@ -28,7 +26,13 @@ public class School {
         ));
     }
 
-    public ArrayList<Student> createStandartList() {
+    public List<Student> groupStudents(List<Student> students, int bounde) {
+        Collections.sort(students);
+        return students.stream().flatMap(Stream::ofNullable).
+                takeWhile(student -> student.getScore() > bounde).collect(Collectors.toList());
+    }
+
+    public ArrayList<Student> createStandardList() {
         ArrayList<Student> students = new ArrayList<>();
         students.add(student1);
         students.add(student2);
@@ -39,7 +43,7 @@ public class School {
         return students;
     }
 
-    public Map<String, Student> createStandartMap() {
+    public Map<String, Student> createStandardMap() {
         Map<String, Student> students = new HashMap<>();
         students.put(student1.getSurname(), student1);
         students.put(student2.getSurname(), student2);

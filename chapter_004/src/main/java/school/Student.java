@@ -1,6 +1,6 @@
 package school;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private int score;
     private String surname;
 
@@ -20,5 +20,10 @@ public class Student {
     @Override
     public String toString() {
         return  this.surname + " " + String.valueOf(score);
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        return this.surname.compareTo(student.getSurname());
     }
 }
