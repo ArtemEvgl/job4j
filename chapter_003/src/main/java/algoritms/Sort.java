@@ -7,13 +7,13 @@ public class Sort {
         int rightMarker = rightBorder;
         int pivot = source[(leftMarker + rightMarker) / 2];
         do {
-            while(source[leftMarker] < pivot) {
+            while (source[leftMarker] < pivot) {
                 leftMarker++;
             }
-            while(source[rightMarker] > pivot) {
+            while (source[rightMarker] > pivot) {
                 rightMarker--;
             }
-            if(leftMarker <= rightMarker) {
+            if (leftMarker <= rightMarker) {
                 if (leftMarker < rightMarker) {
                     int tmp = source[leftMarker];
                     source[leftMarker] = source[rightMarker];
@@ -25,10 +25,10 @@ public class Sort {
             }
         } while (leftMarker <= rightMarker);
 
-        if(leftMarker < rightBorder) {
+        if (leftMarker < rightBorder) {
             quickSort(source, leftMarker, rightBorder);
         }
-        if(leaftBorder < rightMarker) {
+        if (leaftBorder < rightMarker) {
             quickSort(source, leaftBorder, rightMarker);
         }
     }
